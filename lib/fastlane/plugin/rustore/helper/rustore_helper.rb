@@ -48,12 +48,13 @@ module Fastlane
         response.body["body"]["jwe"]
       end
 
-      def self.create_draft(token, package_name, publish_type)
+      def self.create_draft(token, package_name, publish_type, whats_new)
         url = "/public/v1/application/#{package_name}/version"
         response = connection.post(url) do |req|
           req.headers['Public-Token'] = token
           req.body = {}
           req.body['publishType'] = publish_type unless publish_type.nil?
+          req.body['whatsNew'] = whats_new unless whats_new.nil?
         end
 
         UI.message("Debug: response #{response.body}") if ENV['DEBUG']

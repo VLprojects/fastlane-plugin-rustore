@@ -21,7 +21,8 @@ fastlane add_plugin rustore
         gms_apk: "../../app-release.apk",
         hms_apk: "../../app-release-hms.apk",
         package_name: "com.example.example",
-        publish_type: "MANUAL"
+        publish_type: "MANUAL",
+        whats_new: "Version details",
         key_id: "123123",
         private_key: "MIIE....."
     )
@@ -30,7 +31,8 @@ fastlane add_plugin rustore
 * `gms_apk` - путь до .apk, который лучше скачать с гугл плея, у фастлейна даже есть для этого [инструмент](https://docs.fastlane.tools/actions/download_from_play_store/)
 * `hms_apk` - путь до .apk с Huawei-сервисами (опционально). У Рустора пока все плохо с документацией об этом, но залить его можно, что получится - пока хз. 
 * `package_name` - название пакета
-* `publish_type` - тип публикации (MANUAL - ручная, DELAYED - отложенная, INSTANTLY - автоматическая после модерации). По умолчанию - INSTANTLY. 
+* `publish_type` - тип публикации (MANUAL - ручная, DELAYED - отложенная, INSTANTLY - автоматическая после модерации). По умолчанию - INSTANTLY.
+* `whats_new` - Описание «Что нового». Максимальная длина — 500 символов. По умолчанию RuStore берёт значение из предыдущей версии.
 * `key_id` и `private_key` надо взять в админке рустора, доступ к ним имеет только оунер.
 
 ## Ссылочки
